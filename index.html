@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Enterprise Component Registry</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header-bar">
+        <h1 class="brand-title">SYSTEMS <span>REGISTRY</span></h1>
+        <div class="status-pill">Secure</div>
+    </header>
+
+    <main class="wrapper">
+        <div class="main-panel">
+            
+            <div class="section-container">
+                <div class="section-title"><span>01.</span> Select Component Assembly</div>
+                <div class="select-wrapper">
+                    <select id="assemblySelect" onchange="evaluateSelection()">
+                        <option value="">-- Choose Kit Class --</option>
+                        <option value="STEERING">STEERING SEAL KIT</option>
+                        <option value="STABILIZER">STABILIZER SEAL KIT</option>
+                        <option value="BUCKET">BUCKET SEAL KIT</option>
+                        <option value="DIPPER">DIPPER SEAL KIT</option>
+                        <option value="BOOM">BOOM SEAL KIT</option>
+                        <option value="SHOVEL">SHOVEL SEAL KIT</option>
+                        <option value="LOADER LIFT">LOADER LIFT SEAL KIT</option>
+                        <option value="SLEWRAM">SLEWRAM SEAL KIT</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="section-container">
+                <div class="section-title"><span>02.</span> Select Production Year Chart</div>
+                <div class="year-grid" id="yearsMatrix">
+                    </div>
+            </div>
+
+            <div class="result-container">
+                <div id="displayOutput" class="output-box">
+                    <div class="placeholder-text">Select a kit and year above to see results</div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

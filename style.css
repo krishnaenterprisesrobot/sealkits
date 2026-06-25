@@ -1,0 +1,208 @@
+:root {
+    --bg-main: #0b0f19;
+    --panel-bg: #111827;
+    --panel-card: #1f2937;
+    --accent: #fbbf24;
+    --accent-hover: #f59e0b;
+    --text-light: #f9fafb;
+    --text-muted: #9ca3af;
+    --border: #374151;
+    --success-glow: rgba(16, 185, 129, 0.1);
+    --success-border: #10b981;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-light);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Prevents whole-page scrolling */
+}
+
+/* Header Config */
+.header-bar {
+    background-color: var(--panel-bg);
+    border-bottom: 2px solid var(--border);
+    padding: 0.75rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.brand-title {
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.brand-title span {
+    color: var(--accent);
+}
+
+.status-pill {
+    background: rgba(251, 191, 36, 0.1);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* Fullscreen Mobile View Wrapper */
+.wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0.75rem;
+    height: calc(100vh - 50px);
+}
+
+.main-panel {
+    background-color: var(--panel-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.section-container {
+    flex-shrink: 0;
+    margin-bottom: 0.75rem;
+}
+
+.section-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 0.4rem;
+}
+
+.section-title span {
+    color: var(--accent);
+}
+
+/* Layout Elements Controls */
+select {
+    width: 100%;
+    background-color: var(--panel-card);
+    border: 1px solid var(--border);
+    color: var(--text-light);
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    outline: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+/* Scroll-free Dynamic Year Chart Matrix */
+.year-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.4rem;
+}
+
+.year-btn {
+    background-color: var(--panel-card);
+    border: 1px solid var(--border);
+    color: var(--text-light);
+    padding: 0.6rem 0;
+    font-size: 0.9rem;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    user-select: none;
+    transition: all 0.15s ease;
+}
+
+.year-btn.active {
+    background-color: var(--accent);
+    color: var(--bg-main);
+    border-color: var(--accent);
+}
+
+/* Bottom Output Segment fills up all remaining screen area */
+.result-container {
+    flex: 1;
+    min-height: 0; 
+    margin-top: 0.25rem;
+}
+
+.output-box {
+    background: linear-gradient(135deg, #111827, #1f2937);
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    padding: 1rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.output-box.matched {
+    border-left: 4px solid var(--success-border);
+    background: var(--success-glow);
+}
+
+.output-box.missing {
+    border-left: 4px solid #ef4444;
+    background: rgba(239, 68, 68, 0.05);
+}
+
+.placeholder-text {
+    color: var(--text-muted);
+    text-align: center;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.status-header {
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.75rem;
+}
+
+.matched .status-header { color: var(--success-border); }
+.missing .status-header { color: #ef4444; }
+
+.data-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.data-field label {
+    display: block;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+    margin-bottom: 0.1rem;
+}
+
+.data-field .val {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--text-light);
+    word-break: break-all;
+}
